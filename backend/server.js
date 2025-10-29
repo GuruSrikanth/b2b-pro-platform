@@ -8,6 +8,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => res.send("API running"));
+app.get("/health", (req, res) => res.json({ status: "ok", ts: Date.now() }));
 app.listen(5000, () => console.log("Server running on port 5000"));
 
 
